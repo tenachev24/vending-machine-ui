@@ -1,14 +1,14 @@
 <template>
-  <VendingMachine msg="Vending Machine App"/>
+  <VendingMachineSkeleton msg="Vending Machine App"/>
 </template>
 
 <script>
-import VendingMachine from "@/components/VendingMachine";
+import VendingMachineSkeleton from "@/components/VendingMachineSkeleton";
 
 export default {
   name: 'App',
   components: {
-    VendingMachine
+    VendingMachineSkeleton
   }
 }
 </script>
