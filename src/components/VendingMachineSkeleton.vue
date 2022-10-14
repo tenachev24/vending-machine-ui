@@ -1,7 +1,7 @@
 <template>
   <div class="vend-container">
     <div class="vend-outer">
-      <div class="return-box" id="return"/>
+      <div class="return-box" @click=returnMoney() id="return"/>
       <div class="vend-back">
         <div class="container">
           <div class="product-row">
@@ -14,7 +14,7 @@
                     </div>
                   </div>
                   <div class="tag tag-one">
-                    <p>A1-</p>
+                    <p>A1: {{ this.productPrice('A1').toFixed(2) }}</p>
                   </div>
                 </div>
               </div>
@@ -28,7 +28,7 @@
                     </div>
                   </div>
                   <div class="tag tag-two">
-                    <p>A2-</p>
+                    <p>A2: {{ this.productPrice('A2').toFixed(2) }}</p>
                   </div>
                 </div>
               </div>
@@ -42,7 +42,7 @@
                     </div>
                   </div>
                   <div class="tag tag-three">
-                    <p>A3-</p>
+                    <p>A3: {{ this.productPrice('A3').toFixed(2) }}</p>
                   </div>
                 </div>
               </div>
@@ -56,7 +56,7 @@
                     </div>
                   </div>
                   <div class="tag tag-four">
-                    <p>A4-</p>
+                    <p>A4: {{ this.productPrice('A4').toFixed(2) }}</p>
                   </div>
                 </div>
               </div>
@@ -72,7 +72,7 @@
                     </div>
                   </div>
                   <div class="tag tag-one">
-                    <p>B1-</p>
+                    <p>B1: {{ this.productPrice('B1').toFixed(2) }}</p>
                   </div>
                 </div>
               </div>
@@ -86,7 +86,7 @@
                     </div>
                   </div>
                   <div class="tag tag-two">
-                    <p>B2-</p>
+                    <p>B2: {{ this.productPrice('B2').toFixed(2) }}</p>
                   </div>
                 </div>
               </div>
@@ -100,7 +100,7 @@
                     </div>
                   </div>
                   <div class="tag tag-three">
-                    <p>B3-</p>
+                    <p>B3: {{ this.productPrice('B3').toFixed(2) }}</p>
                   </div>
                 </div>
               </div>
@@ -114,7 +114,7 @@
                     </div>
                   </div>
                   <div class="tag tag-four">
-                    <p>B4-</p>
+                    <p>B4: {{ this.productPrice('B4').toFixed(2) }}</p>
                   </div>
                 </div>
               </div>
@@ -130,7 +130,7 @@
                     </div>
                   </div>
                   <div class="tag tag-one">
-                    <p>C1-</p>
+                    <p>C1: {{ this.productPrice('C1').toFixed(2) }}</p>
                   </div>
                 </div>
               </div>
@@ -144,7 +144,7 @@
                     </div>
                   </div>
                   <div class="tag tag-two">
-                    <p>C2-</p>
+                    <p>C2: {{ this.productPrice('C2').toFixed(2) }}</p>
                   </div>
                 </div>
               </div>
@@ -158,7 +158,7 @@
                     </div>
                   </div>
                   <div class="tag tag-three">
-                    <p>C3-</p>
+                    <p>C3: {{ this.productPrice('C3').toFixed(2) }}</p>
                   </div>
                 </div>
               </div>
@@ -172,7 +172,7 @@
                     </div>
                   </div>
                   <div class="tag tag-four">
-                    <p>C4-</p>
+                    <p>C4: {{ this.productPrice('C4').toFixed(2) }}</p>
                   </div>
                 </div>
               </div>
@@ -188,7 +188,7 @@
                     </div>
                   </div>
                   <div class="tag tag-one">
-                    <p>D1-</p>
+                    <p>D1: {{ this.productPrice('D1').toFixed(2) }}</p>
                   </div>
                 </div>
               </div>
@@ -202,7 +202,7 @@
                     </div>
                   </div>
                   <div class="tag tag-two">
-                    <p>D2-</p>
+                    <p>D2: {{ this.productPrice('D2').toFixed(2) }}</p>
                   </div>
                 </div>
               </div>
@@ -216,7 +216,7 @@
                     </div>
                   </div>
                   <div class="tag tag-three">
-                    <p>D3-</p>
+                    <p>D3: {{ this.productPrice('D3').toFixed(2) }}</p>
                   </div>
                 </div>
               </div>
@@ -230,7 +230,7 @@
                     </div>
                   </div>
                   <div class="tag tag-four">
-                    <p>C4-</p>
+                    <p>D4: {{ this.productPrice('D4').toFixed(2) }}</p>
                   </div>
                 </div>
               </div>
@@ -246,7 +246,7 @@
                     </div>
                   </div>
                   <div class="tag tag-one">
-                    <p>E1-</p>
+                    <p>E1: {{ this.productPrice('E1').toFixed(2) }}</p>
                   </div>
                 </div>
               </div>
@@ -260,7 +260,7 @@
                     </div>
                   </div>
                   <div class="tag tag-two">
-                    <p>E2-</p>
+                    <p>E2: {{ this.productPrice('E2').toFixed(2) }}</p>
                   </div>
                 </div>
               </div>
@@ -274,7 +274,7 @@
                     </div>
                   </div>
                   <div class="tag tag-three">
-                    <p>E3-</p>
+                    <p>E3: {{ this.productPrice('E3').toFixed(2) }}</p>
                   </div>
                 </div>
               </div>
@@ -288,7 +288,7 @@
                     </div>
                   </div>
                   <div class="tag tag-four">
-                    <p>E4-</p>
+                    <p>E4: {{ this.productPrice('E4').toFixed(2) }}</p>
                   </div>
                 </div>
               </div>
@@ -299,53 +299,300 @@
       </div>
       <div class="container">
         <div class="touch-pad">
-          <button class="pad-code">A1</button>
-          <button class="pad-code">A2</button>
-          <button class="pad-code">A3</button>
-          <button class="pad-code">A4</button>
-          <button class="pad-code">B1</button>
-          <button class="pad-code">B2</button>
-          <button class="pad-code">B3</button>
-          <button class="pad-code">B4</button>
-          <button class="pad-code">C1</button>
-          <button class="pad-code">C2</button>
-          <button class="pad-code">C3</button>
-          <button class="pad-code">C4</button>
-          <button class="pad-code">D1</button>
-          <button class="pad-code">D2</button>
-          <button class="pad-code">D3</button>
-          <button class="pad-code">D4</button>
-          <button class="pad-code">E1</button>
-          <button class="pad-code">E2</button>
-          <button class="pad-code">E3</button>
-          <button class="pad-code">E4</button>
+          <button class="pad-code" @click="productCode('A1'); this.sumTotalPrice('A1')">A1</button>
+          <button class="pad-code" @click="productCode('A2'); this.sumTotalPrice('A2')">A2</button>
+          <button class="pad-code" @click="productCode('A3'); this.sumTotalPrice('A3')">A3</button>
+          <button class="pad-code" @click="productCode('A4'); this.sumTotalPrice('A4')">A4</button>
+          <button class="pad-code" @click="productCode('B1'); this.sumTotalPrice('B1')">B1</button>
+          <button class="pad-code" @click="productCode('B2'); this.sumTotalPrice('B2')">B2</button>
+          <button class="pad-code" @click="productCode('B3'); this.sumTotalPrice('B3')">B3</button>
+          <button class="pad-code" @click="productCode('B4'); this.sumTotalPrice('B4')">B4</button>
+          <button class="pad-code" @click="productCode('C1'); this.sumTotalPrice('C1')">C1</button>
+          <button class="pad-code" @click="productCode('C2'); this.sumTotalPrice('C2')">C2</button>
+          <button class="pad-code" @click="productCode('C3'); this.sumTotalPrice('C3')">C3</button>
+          <button class="pad-code" @click="productCode('C4'); this.sumTotalPrice('C4')">C4</button>
+          <button class="pad-code" @click="productCode('D1'); this.sumTotalPrice('D1')">D1</button>
+          <button class="pad-code" @click="productCode('D2'); this.sumTotalPrice('D2')">D2</button>
+          <button class="pad-code" @click="productCode('D3'); this.sumTotalPrice('D3')">D3</button>
+          <button class="pad-code" @click="productCode('D4'); this.sumTotalPrice('D4')">D4</button>
+          <button class="pad-code" @click="productCode('E1'); this.sumTotalPrice('E1')">E1</button>
+          <button class="pad-code" @click="productCode('E2'); this.sumTotalPrice('E2')">E2</button>
+          <button class="pad-code" @click="productCode('E3'); this.sumTotalPrice('E3')">E3</button>
+          <button class="pad-code" @click="productCode('E4'); this.sumTotalPrice('E4')">E4</button>
         </div>
+      </div>
+      <div class="clear-products" id="clear-products" @click="removeProduct()">
+        correct
       </div>
       <div class="grab-box"/>
       <div class="coin-box">
-        <button class="coin-outter" id="zero-five">.05</button>
-        <button class="coin-outter" id="zero-ten">0.1</button>
-        <button class="coin-outter" id="zero-fifty">0.5</button>
-        <button class="coin-outter" id="one">1.0</button>
-        <button class="coin-outter" id="to">2.0</button>
+        <button class="coin-outter" @click="sumCredit(0.05)" id="zero-five">.05</button>
+        <button class="coin-outter" @click="sumCredit(0.1)" id="zero-ten">0.1</button>
+        <button class="coin-outter" @click="sumCredit(0.5)" id="zero-fifty">0.5</button>
+        <button class="coin-outter" @click="sumCredit(1.0)" id="one">1.0</button>
+        <button class="coin-outter" @click="sumCredit(2.0)" id="to">2.0</button>
       </div>
       <div class="currency-box">
-        <button class="currency" id="bgn">BGN</button>
-        <button class="currency" id="eur">EUR</button>
-        <button class="currency" id="usd">USD</button>
+        <button :class="{active: currency==='bgn'}" class="currency" @click="setCurrencyValue('bgn')" id="bgn">BGN
+        </button>
+        <button :class="{active: currency==='eur'}" class="currency" @click="setCurrencyValue('eur')" id="eur">EUR
+        </button>
+        <button :class="{active: currency==='usd'}" class="currency" @click="setCurrencyValue('usd')" id="usd">USD
+        </button>
       </div>
-      <div class="pay-box" id="pay" />
+      <div class="information-monitor-box" id="pay">
+        <div>
+          <p class="information-monitor-box-text-currency">Currency: {{ this.currency.toUpperCase() }} </p>
+          <p class="information-monitor-box-text-credit">Credit: {{ this.credit.toFixed(2) }}</p>
+          <p class="information-monitor-box-text-products">Products: {{
+              this.productsCodes.length === 0 ?
+                  "Choose your products!" :
+                  this.productsCodes.join(" ,")
+            }}
+          </p>
+          <p class="information-monitor-box-text-total-price">Total Price: {{ this.totalPrice.toFixed(2) }}</p>
+        </div>
+      </div>
+      <div>
+        <button @click="openForm()">
+          <img class="pos-icon" src="pos-terminal-icon-4.jpg">
+        </button>
+      </div>
+      <!-- Display a payment form -->
+      <form id="payment-form">
+        <div id="card-element"><!--Stripe.js injects the Card Element--></div>
+        <button id="submit" class="payment-button">
+          <div class="spinner hidden" id="spinner"></div>
+          <span id="button-text">Pay now</span>
+        </button>
+        <p id="card-error" role="alert"></p>
+        <p class="result-message hidden">
+          Payment succeeded, see the result in your
+          <a href="" target="_blank">Stripe dashboard.</a> Refresh the page to pay again.
+        </p>
+      </form>
+      <!-- Display a payment form -->
+<!--      <form id="payment-form">-->
+<!--        <div id="card-element">&lt;!&ndash;Stripe.js injects the Card Element&ndash;&gt;</div>-->
+<!--        <button id="submit" class="payment-button">-->
+<!--          <div class="spinner hidden" id="spinner"></div>-->
+<!--          <span id="button-text">Pay now</span>-->
+<!--        </button>-->
+<!--        <p id="card-error" role="alert"></p>-->
+<!--        <p class="result-message hidden">-->
+<!--          Payment succeeded, see the result in your-->
+<!--          <a href="" target="_blank">Stripe dashboard.</a> Refresh the page to pay again.-->
+<!--        </p>-->
+<!--      </form>-->
     </div>
   </div>
 </template>
 
 <script>
+import { loadStripe } from '@stripe/stripe-js';
 export default {
   name: 'VendingMachineSkeleton',
   props: {
     msg: String
+  },
+  data() {
+    return {
+      currency: 'bgn',
+      credit: 0,
+      productsCodes: [],
+      totalPrice: 0.0,
+    }
+  },
+  computed: {
+    getCurrencyValue() {
+      switch (this.currency) {
+        case "eur":
+          return 1.95583;
+        case "usd":
+          return 2.00639;
+      }
+
+      return 1
+    }
+  },
+
+  methods: {
+    setCurrencyValue(value) {
+      this.currency = value
+    },
+
+    sumCredit(amount = 0) {
+      this.credit += amount
+    },
+
+    returnMoney(amount = 0) {
+      this.credit = amount
+    },
+
+    productCode(code) {
+      if (this.productsCodes.length < 20) {
+        this.productsCodes.push(code);
+      }
+    },
+
+    sumTotalPrice(code) {
+      if (this.productsCodes.length < 20) {
+        this.totalPrice += this.productPrice(code);
+      }
+    },
+
+    productPrice(code) {
+      let productsPrices = {
+        A1: 1.20, A2: 1.50, A3: 1.25, A4: 1.00, B1: 0.50, B2: 0.75, B3: 1.50, B4: 2.00, C1: 2.80,
+        C2: 2.20, C3: 1.95, C4: 4.15, D1: 5.80, D2: 6.50, D3: 9.90, D4: 14.50, E1: 4.00, E2: 3.20, E3: 6.00, E4: 8.45,
+      }
+
+      let price = productsPrices[code];
+      let currency = this.getCurrencyValue;
+
+      return price / currency;
+    },
+
+    removeProduct() {
+      let removedCode = this.productsCodes.pop();
+      let removedProductPrice = 0;
+
+      if (!removedCode) {
+        this.totalPrice = removedProductPrice;
+      } else {
+        removedProductPrice = this.productPrice(removedCode)
+        this.totalPrice -= removedProductPrice;
+      }
+    },
+
+    openForm() {
+      document.getElementById("payment-form").style.display = "block";
+    },
+
+    closeForm() {
+      document.getElementById("payment-form").style.display = "none";
+    }
   }
 }
+
+// A reference to Stripe.js initialized with a fake API key.
+// Sign in to see examples pre-filled with your key.
+var stripe = loadStripe("pk_test_51GiLv8F540OZ8hRRLPioJ3NouApToX5xYVC1YrDPmiShigYYZm8VXBYpv7ERfBPYKzab58CgLOjzopoWCiB432aJ00edTXox9H");
+
+// The items the customer wants to buy
+var purchase = {
+  items: [{ id: "xl-tshirt" }]
+};
+
+// Disable the button until we have Stripe set up on the page
+// document.querySelector("button").disabled = true;
+fetch("/create.php", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(purchase)
+})
+    .then(function(result) {
+      return result.json();
+    })
+    .then(function(data) {
+      var elements = stripe.elements();
+      var style = {
+        base: {
+          color: "#32325d",
+          fontFamily: 'Arial, sans-serif',
+          fontSmoothing: "antialiased",
+          fontSize: "16px",
+          "::placeholder": {
+            color: "#32325d"
+          }
+        },
+        invalid: {
+          fontFamily: 'Arial, sans-serif',
+          color: "#fa755a",
+          iconColor: "#fa755a"
+        }
+      };
+
+      var card = elements.create("card", { style: style });
+      // Stripe injects an iframe into the DOM
+      card.mount("#card-element");
+
+      card.on("change", function (event) {
+        // Disable the Pay button if there are no card details in the Element
+        document.querySelector("button").disabled = event.empty;
+        document.querySelector("#card-error").textContent = event.error ? event.error.message : "";
+      });
+
+      var form = document.getElementById("payment-form");
+      form.addEventListener("submit", function(event) {
+        event.preventDefault();
+        // Complete payment when the submit button is clicked
+        payWithCard(stripe, card, data.clientSecret);
+      });
+    });
+
+// Calls stripe.confirmCardPayment
+// If the card requires authentication Stripe shows a pop-up modal to
+// prompt the user to enter authentication details without leaving your page.
+var payWithCard = function(stripe, card, clientSecret) {
+  loading(true);
+  stripe
+      .confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: card
+        }
+      })
+      .then(function(result) {
+        if (result.error) {
+          // Show error to your customer
+          showError(result.error.message);
+        } else {
+          // The payment succeeded!
+          orderComplete(result.paymentIntent.id);
+        }
+      });
+};
+
+/* ------- UI helpers ------- */
+
+// Shows a success message when the payment is complete
+var orderComplete = function(paymentIntentId) {
+  loading(false);
+  document
+      .querySelector(".result-message a")
+      .setAttribute(
+          "href",
+          "https://dashboard.stripe.com/test/payments/" + paymentIntentId
+      );
+  document.querySelector(".result-message").classList.remove("hidden");
+  document.querySelector("button").disabled = true;
+};
+
+// Show the customer the error from Stripe if their card fails to charge
+var showError = function(errorMsgText) {
+  loading(false);
+  var errorMsg = document.querySelector("#card-error");
+  errorMsg.textContent = errorMsgText;
+  setTimeout(function() {
+    errorMsg.textContent = "";
+  }, 4000);
+};
+
+// Show a spinner on payment submission
+var loading = function(isLoading) {
+  if (isLoading) {
+    // Disable the button and show a spinner
+    document.querySelector("button").disabled = true;
+    document.querySelector("#spinner").classList.remove("hidden");
+    document.querySelector("#button-text").classList.add("hidden");
+  } else {
+    document.querySelector("button").disabled = false;
+    document.querySelector("#spinner").classList.add("hidden");
+    document.querySelector("#button-text").classList.remove("hidden");
+  }
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -356,9 +603,9 @@ $primary_bottom_color_1: solid black;
 $primary_border_color_2: solid #444;
 $background_color_1: #000;
 $background_color_2: #868383;
-$background_color_3: rgba(87, 83, 83, 0.89);
+$background_color_3: rgba(232, 17, 17, 0.94);
 $box_shadow_color_2: rgba(0, 0, 0, 1);
-$box_shadow_color_3: rgba(92, 238, 4, 0.77);
+$box_shadow_color_3: rgba(31, 66, 9, 0.77);
 $background_color_4: rgba(255, 255, 255, .25);
 $background_color_5: #111;
 $price_box_color: #645e5e;
@@ -425,6 +672,145 @@ $product_row_tag_color: #10e7a6;
   z-index: 9;
 }
 
+.pos-icon {
+  position: absolute;
+  top: 80px;
+  right: -3px;
+  width: 45px;
+  height: 10%;
+}
+
+form {
+  width: 30vw;
+  min-width: 500px;
+  align-self: center;
+  box-shadow: 0px 0px 0px 0.5px rgba(50, 50, 93, 0.1),
+  0px 2px 5px 0px rgba(50, 50, 93, 0.1), 0px 1px 1.5px 0px rgba(0, 0, 0, 0.07);
+  border-radius: 7px;
+  padding: 40px;
+  display: none;
+}
+
+input {
+  border-radius: 6px;
+  margin-bottom: 6px;
+  padding: 12px;
+  border: 1px solid rgba(50, 50, 93, 0.1);
+  height: 44px;
+  font-size: 16px;
+  width: 100%;
+  background: white;
+}
+
+.result-message {
+  line-height: 22px;
+  font-size: 16px;
+}
+
+.result-message a {
+  color: rgb(89, 111, 214);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}
+
+#card-error {
+  color: rgb(105, 115, 134);
+  text-align: left;
+  font-size: 13px;
+  line-height: 17px;
+  margin-top: 12px;
+}
+
+#card-element {
+  border-radius: 4px 4px 0 0 ;
+  padding: 12px;
+  border: 1px solid rgba(50, 50, 93, 0.1);
+  height: 44px;
+  width: 100%;
+  background: white;
+}
+
+#payment-request-button {
+  margin-bottom: 32px;
+}
+
+/* Buttons and links */
+.payment-button {
+  background: #5469d4;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  border-radius: 0 0 4px 4px;
+  border: 0;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: block;
+  transition: all 0.2s ease;
+  box-shadow: 0px 4px 5.5px 0px rgba(0, 0, 0, 0.07);
+  width: 100%;
+}
+.payment-button:hover {
+  filter: contrast(115%);
+}
+.payment-button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* spinner/processing state, errors */
+.spinner,
+.spinner:before,
+.spinner:after {
+  border-radius: 50%;
+}
+.spinner {
+  color: #ffffff;
+  font-size: 22px;
+  text-indent: -99999px;
+  margin: 0px auto;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  box-shadow: inset 0 0 0 2px;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.spinner:before,
+.spinner:after {
+  position: absolute;
+  content: "";
+}
+.spinner:before {
+  width: 10.4px;
+  height: 20.4px;
+  background: #5469d4;
+  border-radius: 20.4px 0 0 20.4px;
+  top: -0.2px;
+  left: -0.2px;
+  -webkit-transform-origin: 10.4px 10.2px;
+  transform-origin: 10.4px 10.2px;
+  -webkit-animation: loading 2s infinite ease 1.5s;
+  animation: loading 2s infinite ease 1.5s;
+}
+.spinner:after {
+  width: 10.4px;
+  height: 10.2px;
+  background: #5469d4;
+  border-radius: 0 10.2px 10.2px 0;
+  top: -0.1px;
+  left: 10.2px;
+  -webkit-transform-origin: 0px 10.2px;
+  transform-origin: 0px 10.2px;
+  -webkit-animation: loading 2s infinite ease;
+  animation: loading 2s infinite ease;
+}
+
 .inner-spiral {
   width: 60%;
   height: 60%;
@@ -435,6 +821,43 @@ $product_row_tag_color: #10e7a6;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.information-monitor-box-text-currency {
+  color: $product_row_tag_color;
+  position: absolute;
+  display: inline;
+  font-size: 5.5px;
+  left: 3px;
+  top: 0px;
+}
+
+.information-monitor-box-text-credit {
+  color: $product_row_tag_color;
+  position: absolute;
+  display: inline;
+  font-size: 5.5px;
+  left: 55px;
+  top: 0px;
+}
+
+.information-monitor-box-text-products {
+  color: $product_row_tag_color;
+  position: absolute;
+  display: inline-flex;
+  font-size: 5.5px;
+  left: 3px;
+  right: 9.8px;
+  top: 10px;
+}
+
+.information-monitor-box-text-total-price {
+  color: $product_row_tag_color;
+  position: absolute;
+  display: inline;
+  font-size: 5.5px;
+  left: 3px;
+  top: 35px;
 }
 
 .product-row .tag {
@@ -499,7 +922,7 @@ $product_row_tag_color: #10e7a6;
 }
 
 .pad-code:active {
-  background-color: #868383;
+  background-color: $product_row_tag_color;
 }
 
 .pad-code p {
@@ -525,13 +948,25 @@ $product_row_tag_color: #10e7a6;
 
 .return-box {
   position: absolute;
-  top: 230px;
+  top: 220px;
   right: 70px;
   background-color: #333;
   width: 10px;
   height: 15px;
   box-shadow: 0 0 10px 1px $box_shadow_color_3;
   cursor: pointer;
+}
+
+.clear-products {
+  position: absolute;
+  top: 400px;
+  right: 50px;
+  background-color: #c09393;
+  width: 45px;
+  height: 15px;
+  box-shadow: 0 0 10px 1px $box_shadow_color_3;
+  cursor: pointer;
+  font-size: 12px;
 }
 
 .return-box:active {
@@ -541,7 +976,7 @@ $product_row_tag_color: #10e7a6;
 .currency-box {
   position: absolute;
   right: 25px;
-  top: 165px;
+  top: 150px;
   width: 100px;
   height: 30px;
   display: flex;
@@ -562,14 +997,19 @@ $product_row_tag_color: #10e7a6;
   margin: 2px;
 }
 
+.active, .currency:hover {
+  background-color: $product_row_tag_color;
+  color: white;
+}
+
 .currency:active {
-  box-shadow: 0 0 5px 2px #4be30e;
+  box-shadow: 0 0 5px 2px $product_row_tag_color;
 }
 
 .coin-box {
   position: absolute;
   right: 25px;
-  top: 200px;
+  top: 185px;
   width: 100px;
   height: 25px;
   display: flex;
@@ -590,7 +1030,7 @@ $product_row_tag_color: #10e7a6;
 }
 
 .coin-outter:active {
-  box-shadow: 0 0 5px 2px $box_shadow_color_3;
+  box-shadow: 0 0 5px 2px #4be30e;
 }
 
 .pepsi-box {
@@ -920,13 +1360,13 @@ img {
   padding: 5px;
 }
 
-.pay-box {
+.information-monitor-box {
   position: absolute;
-  top: 113px;
-  right: 39px;
+  top: 90px;
+  right: 48px;
   background-color: #333;
-  width: 70px;
-  height: 25px;
+  width: 95px;
+  height: 50px;
   -moz-box-shadow: inset 0 0 10px $box_shadow_color;
   -webkit-box-shadow: inset 0 0 10px $box_shadow_color;
   box-shadow: inset 0 0 10px $box_shadow_color;
